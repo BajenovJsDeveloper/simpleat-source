@@ -1,0 +1,50 @@
+@import "./mixins.scss";
+
+@keyframes rotateIn{
+	0%{transform: translateY(-200px) rotateX(30deg) scale(0.7);}
+	100%{transform: translateY(0) rotateX(0deg) scale(1);}
+}
+
+.main{
+	.popup-demo{
+		@include flexBox();
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.5);
+		z-index:1000;
+		perspective: 100px;
+		overflow-y: auto; 
+		&__message-box{
+			@include flexBox(center, center, column);
+			padding: 30px;
+			margin:10px;
+			max-width: 700px;
+			background-color: rgba(0, 0, 0, 0.78);
+			border-radius: 6px;
+			box-shadow:  0 10px 15px black;
+			color: white;
+			&.show{
+				animation-name: rotateIn;
+				animation-duration: 0.7s;
+			}
+		}
+		&__text{
+			padding: 10px;
+			font-size: 1.2rem;
+			text-align: center;
+			color: inherit;
+		}
+		&__title{
+			padding: 20px 0;
+			border-bottom: 1px solid white
+		}
+		
+		display: flex;
+		visibility: hidden;
+		opacity: 0;
+		transition: 0.5s linear;
+	}
+}

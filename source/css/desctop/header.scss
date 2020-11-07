@@ -1,0 +1,65 @@
+@import "./mixins.scss";
+
+.header{
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: 0;
+	// @include flexBox(center,center,row);
+	background-color: #f0f6f4;
+	z-index: 200;
+	.nav{
+		width: 80%;
+		min-height: 110px;
+		display: grid;
+		grid-template-columns: repeat(3, auto);
+		margin: 0 auto;
+		&__block{
+			@include flexBox(center,center,row);
+			&.right{
+				justify-self: end;
+			}
+			&.left{
+				justify-self: start; 
+			}
+			&.logo{
+				min-width: 100px;
+			}
+		}
+		&__item{
+			@include flexBox(flex-start,center,row);
+		}
+		&__link{
+			@include flexBox(flex-start,center,row);
+		}
+		&__cart{
+			margin-left:2px;
+		}
+		&__sign-in{
+				white-space: nowrap;
+		}
+		&__contact{
+			margin-left: 28px;
+		}
+		&__button{
+			margin-left: 28px;
+		}
+		&__img-cart{}
+	}
+	.nav{
+		@media screen and (max-width: 768px){
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, auto);
+			margin: 10px 0;
+			&__block{
+				&.right, &.left{
+					justify-self: center;
+					width: 100%;
+				}
+				&.logo{
+				}
+			}
+			
+		}
+	}
+}

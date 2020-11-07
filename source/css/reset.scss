@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700&family=Raleway&display=swap');
+
+h1,h2,h3,h4,h5,h6,p,div,section,header,main,footer,body{
+	display: block;
+}
+*{
+	box-sizing:border-box;
+	text-align: center;
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+	color: black;
+}
+input{
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+}
+html{
+	overflow-x: hidden; 
+}
+body{
+	font-size: 16px;
+	font-family: 'Montserrat';
+}
+
+img{
+	object-fit: cover;
+	width: 100%;
+}
+button{
+	border:none;
+	font-size: inherit;
+	cursor:pointer;
+}
+ul{
+	list-style: none;
+}

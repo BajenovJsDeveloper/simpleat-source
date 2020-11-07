@@ -1,0 +1,95 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+.card{
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: min-content 1fr;
+	justify-content: center;
+	justify-items: center;
+	grid-gap: 40px;
+	&__picture-block{
+		@include flexBox();
+		position: relative;
+		border-radius: 50%;
+		overflow: hidden;
+	}
+	&__picture{
+	}
+	&__title{
+		font-family: 'Bebas Neue';
+		font-size: 1.5rem;
+		font-weight: 400;
+	}
+	&__about-text{
+		display: block;
+		margin-top: 1rem;
+		font-family: 'Montserrat';
+		font-size: 0.81rem;
+		font-weight: 400;
+	}
+	&__front-color{
+		@include flexBox();
+		position: absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		&.color{
+			&_pink{
+				background-color: rgba(230, 156, 227, 0.42);
+			}
+			&_orange{
+				background-color: rgba(218, 183, 80, 0.42)
+			}
+			&_rose{
+				background-color: rgba(244, 168, 177, 0.42)
+			}
+			&_cyan{
+				background-color: rgba(122, 196, 194, 0.42);
+			}
+			&_skyblue{
+				background-color: rgba(96, 184, 230, 0.42)
+			}
+			&_green{
+				background-color: rgba(98, 174, 77, 0.42)
+			}
+		}
+	}
+	&__front-picture{
+		width: 50%;
+	}
+}
+
+.main{
+	.why{
+		@include flexBox();
+		&__container{
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, min-content);
+			grid-gap: 45px;
+		}
+		&__button{
+			white-space: nowrap;
+		}
+		&__main{
+			display: grid;
+			grid-template-columns: repeat(6, minmax(95px, 168px));
+			justify-content: center;
+			justify-items: center;
+			grid-gap: 25px;
+			@media screen and(max-width: 860px){
+				grid-template-columns: repeat(3, minmax(95px, 168px));
+				grid-template-rows: repeat(2, min-content);
+			}
+			@media screen and(max-width: 576px){
+				grid-template-columns: repeat(2, minmax(95px, 168px));
+				grid-template-rows: repeat(3, min-content);
+			}
+		}
+	}
+}

@@ -1,0 +1,138 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+$colorDownloadLink: rgba(120, 188, 97, 1);
+.about{
+	display: grid;
+	grid-template-columns: 3fr minmax(35px, 75px);
+	align-items: center;
+	justify-items: end;
+	margin-bottom: 35px;
+	&:last-child{
+		margin-bottom: 0;
+	}
+	&__block-text{
+		text-align: right; 
+	}
+	&__title{
+		font-family: "Montserrat";
+		font-size: 18px;
+		font-weight: bold;
+		text-align: inherit;
+		padding-bottom: 13px;
+	}
+	&__about{
+		font-family: "Montserrat";
+		font-size: 14px;
+		text-align: inherit;
+	}
+	&__block-image{
+
+	}
+	&__picture{
+		object-fit: scale-down;
+	}
+	&_revers{
+		grid-template-columns:  minmax(35px, 75px) 3fr;
+		grid-auto-flow: dense;
+		justify-items: start;
+		.about{
+			&__block-text{
+				grid-column: 2/3;
+				text-align: left;
+			}
+			&__block-image{
+				grid-column: 1/2;
+			}
+		}
+	}
+}
+
+.main{
+	.facts{
+		@include flexBox();
+		background-color: rgba(240, 246, 244, 1);
+		&__container{
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(3, min-content);
+			justify-content: center;
+			justify-items: center;
+			grid-gap: 18px;
+		}
+		&__body{
+			display: grid;
+			grid-template-columns: 4fr 1fr 2fr 1fr 4fr;
+			grid-gap: 28px;
+			align-items: center;
+			@media screen and(max-width: 992px){
+				grid-template-rows: repeat(3, min-content);
+				grid-template-columns: 1fr 2fr 1fr;
+				.facts__left-side{
+					grid-column: 1/4;
+					grid-row: 1/2;
+					align-items: flex-end;
+				}
+				.facts__center-side{
+					grid-column: 2/3;
+					grid-row: 2/3;
+				}
+				.facts__right-side{
+					grid-column: 1/4;
+					grid-row: 3/4;
+					align-items: flex-start;
+				}
+				.facts__left-shape{
+					grid-column: 1/2;
+					grid-row: 2/3;
+				}
+				.facts__right-shape{
+					grid-column: 3/4;
+					grid-row: 2/3;
+				}
+			}
+		}
+		&__left-side{
+			@include flexBox(center, flex-end, column);
+		}
+		&__center-side{
+			@include flexBox();
+		}
+		&__right-side{
+			@include flexBox(center, flex-start, column);
+		}
+		&__picture{
+			max-width: 133px;
+		}
+		
+		&__left-shape{}
+		&__right-shape{}
+		&__footer{
+			@include flexBox(center, center, column);
+			margin-top: 10px;
+		}
+		&__download-link{
+			text-decoration: underline;
+			color: $colorDownloadLink;
+			margin-bottom: 40px;
+			&:hover{
+				color: darken($colorDownloadLink, 30%);
+			}
+		}
+		&_button{
+			padding: 22px 53px;
+			font-size: 18px;
+		}
+		&_shift-left{
+			position: relative;
+			left: -40px;
+		}
+		&_shift-right{
+			position: relative;
+			left: 40px;
+		}
+	}
+}

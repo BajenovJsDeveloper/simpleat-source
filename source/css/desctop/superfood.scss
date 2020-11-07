@@ -1,0 +1,137 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+.table{
+	&_food{
+		border-spacing: 0;
+		border-collapse: collapse;
+		justify-self: start;
+		width: 100%;
+		&>thead>tr th{
+			text-align: left;
+			padding: 5px 25px 0;
+			border-bottom: 1px solid rgba(231, 232, 232, 1);
+		}
+		&>tbody>tr td{
+			text-align: left;
+			padding: 9px 25px 0;
+			border-bottom: 1px solid rgba(231, 232, 232, 1);
+			color: rgba(65, 71, 77, 1);
+		}
+		&>tbody>tr td:first-child{
+			font-weight: 700;
+			color: rgba(54, 193, 186, 1);
+		}
+		&>tbody>tr:last-child td{
+			border-bottom: none;
+		}
+	}
+}
+
+.main{
+	.super-food{
+		@include flexBox();
+		&__container{
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(4, min-content);
+			grid-gap:35px;
+		}
+		&_bg-color{
+			background-color: rgba(240, 246, 244, 1);
+		}
+		&__side-block{
+			position: relative;
+			@include flexBox();
+		}
+		&__side-table{
+			width: 100%;
+			padding-right: 50px;
+		}
+		&__front-block{
+			@include flexBox();
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			font-size: 1.875rem;
+			background-color: rgba(255, 255, 255, 0.8);
+		}
+		&__table-row{
+			display: grid;
+			grid-template-columns: 5fr 7fr;
+			align-items: start;
+			justify-items: center;
+			width: 100%;
+			background-color: white;
+			padding: 45px 0;
+			@media screen and(max-width: 768px){
+				grid-template-columns: 1fr;
+				grid-template-rows: auto;
+				justify-content: center;
+				grid-gap: 35px;
+				width: 100%;
+				padding: 50px;
+			}
+			@media screen and(max-width: 576px){
+				font-size: 11px;
+				.super-food__side-table{
+					padding: 0;
+				}
+			}
+		}
+		&__tabs{
+			@include flexBox(space-around, center);
+		}
+		&__tab{
+			position: relative;
+			font-family: "Bebas Neue";
+			font-size: 24px;
+			font-weight: 400;
+			color: rgba(18, 25, 32, 1);
+			padding-bottom: 8px;
+			cursor: pointer;
+			&:before{
+				position: absolute;
+				content: '';
+				left: 100% / 2 - 70% / 2;
+				bottom: 5px;
+				width: 70%;
+				border: 2px solid rgba(18, 25, 32, 1);
+				transition: 0.3s;
+			}
+		}
+		&__picture{
+			max-width: 125px;
+		}
+		&_active{
+			color: rgba(54, 193, 186, 1);
+			&:before{
+				border: 2px solid rgba(54, 193, 186, 1);
+			}
+			&:after{
+				position: absolute;
+				content: '';
+				left: 100% / 2 - 10;
+				bottom: -45px;
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				transform: rotate(45deg);
+				cursor: default;
+			}
+		}
+		&_button{
+			padding: 20px 50px;
+			font-size: 18px;
+		}
+		&__footer{
+			padding-top: 5px;
+		}
+	}
+}

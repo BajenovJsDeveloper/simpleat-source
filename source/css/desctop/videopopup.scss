@@ -1,0 +1,73 @@
+@import '../desctop/mixins.scss';
+
+@keyframes jumpIn{
+  0%{
+  	transform: rotateX(45deg) translateY(-200vh);
+  }
+  100%{
+  	transform: rotateX(0deg) translateY(0px);
+  }
+}
+
+.animate{
+  animation-name: jumpIn;
+  animation-duration: 0.7s;
+}
+
+.video-popup{
+    position: fixed;
+    top:0;
+    left:0;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.7);
+    opacity: 0;
+    perspective: 80px;
+    z-index: 500;
+    &__container{
+      position: relative;
+      max-width: 700px;
+      min-width: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content:center;
+      align-items: center;
+      border: 1px solid white;
+      padding: 15px;
+      box-shadow: 0 15px 15px black;
+      background-color: black;
+      transform: rotateX(0);
+    }
+    &__video{
+      position: relative;
+      box-sizing: border-box;
+      object-fit: scale-down;
+      border: none;
+      width: 100%;
+      
+    }
+    &__close{
+      	@include flexBox();
+      	position: absolute;
+      	top: -20px;
+      	right: 20px;
+      	width: 40px;
+      	height: 40px;
+      	color: white;
+      	font-size: 1rem;
+      	cursor: pointer;
+      	border-radius: 50%;
+      	padding: 5px;
+      	border: 1px solid white;
+      	background: rgba(49, 49, 49, 1);
+      	transition: 0.3s;
+      	&:hover{
+      		background: lighten(rgba(49, 49, 49, 1), 50%);
+      		transform: scale(1.3);
+      	}
+    }
+}

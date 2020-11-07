@@ -1,0 +1,26 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+.main{
+	width: 100vw;
+	display: block;
+	margin-top: 110px;
+	.section{
+		width: 100vw;
+		padding: 100px 0;
+		@include flexBox();
+		&__container{
+			display: grid;
+			grid-auto-columns: 1fr;
+			align-items:center;
+			width: 80%;
+			grid-gap: 85px;
+			justify-content: center;
+		}
+
+	}
+}

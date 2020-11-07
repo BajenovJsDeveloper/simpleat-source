@@ -1,0 +1,44 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+.main{
+	.joinus{
+		@include flexBox();
+		&__container{
+			display: grid;
+			grid: auto-flow min-content / 1fr; 
+			grid-gap: 0;
+		}
+		&__form-row{
+			@include flexBox();
+			@media screen and(max-width: 768px){
+				flex-direction: column;
+
+			}
+		}
+		&__input-block{
+			border: 2px solid rgba(229, 228, 215, 1);
+			border-radius: 6px;
+			max-width: 512px;
+			min-width: 300px;
+			margin: 45px 1.2rem;
+			overflow: hidden;
+		}
+		&__input{
+			border: none;
+			padding: 0.94rem 1.5rem;
+			font-size: 24px;
+			font-family: 'Montserrat';
+			font-weight: 400;
+			text-align: left;
+		}
+		&__button{
+			font-size: 1.5rem;
+			padding: 1rem 60px;
+		}
+	}
+}

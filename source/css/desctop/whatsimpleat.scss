@@ -1,0 +1,63 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+@mixin gridBox($col: auto, $row: auto, $just: center, $align: center){
+	display: grid;
+	grid-template-columns: $col;
+	grid-template-rows: $row;
+	justify-items: $just;
+	align-items: $align;
+}
+
+$mainBgColor: rgba(54, 193, 186, 1);
+
+.main{
+	.w-simpleat{
+		@include flexBox(center,center);
+		&__container{
+			@include gridBox(1fr 1fr, 1fr, center, center);
+			@media screen and(max-width: 768px){
+				grid-template-columns: 1fr;
+				grid-gap: 20px;
+			}
+		}
+		&__header{}
+		&_bg-color{
+			background-color: $mainBgColor;
+		}
+		&__video-content{
+			position: relative;
+			@include flexBox();
+			border-radius: 6px;
+			position: relative;
+			overflow: hidden;
+			min-width: 300px;
+		}
+		&__image{
+			max-width: 657px;
+		}
+		&__svg-content{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			@include flexBox(center,center,column);
+		}
+		&__svg-image{
+			width: 84px;
+			height: 84px;
+			transition: 0.3s;
+			&:hover{
+				transform: scale(1.2);
+			}
+		}
+		&__text{
+			margin-top: 10px;
+			color: white;
+		}
+	}
+}

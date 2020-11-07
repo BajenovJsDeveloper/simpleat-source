@@ -1,0 +1,39 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+.main{
+	.ingredients{
+		@include flexBox();
+		padding: 100px 0 85px 0;
+		&__container{
+			grid-template-columns: 1fr;
+			grid-template-rows: repeat(2, min-content); 
+			justify-content: center;
+			grid-gap: 40px;
+		}
+		&__card-container{
+			display: grid;
+			grid-template-columns: repeat(5, minmax(120px, 197px));
+			justify-content: center;
+			justify-items: center;
+			grid-gap: 40px;
+			@media screen and(max-width: 768px){
+				grid-template-columns: repeat(2, minmax(120px, 197px));
+				grid-auto-rows: fit-content;
+				grid-gap: 20px;
+				.card:last-child{
+					grid-column: 1/3;
+					self-justify: center;
+				}
+			}
+		}
+		&__padding-20{
+			margin-top: -25px;
+		}
+
+	}
+}

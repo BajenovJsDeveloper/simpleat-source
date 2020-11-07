@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Simpleat</title>
+	<link rel="stylesheet" href="css/main.scss">
+	<meta name="Vladimir" content="Simpleat">
+</head>
+<body>
+	<header class="header">
+		<nav class="nav">
+			<div class="nav__block left"> 
+				<div class="nav__item">
+					<a href="#" class="nav__link demo" >
+						<img src="./images/header/cart.jpg" alt="cart" class="nav__img-cart">
+						<span class="nav__cart">Cart</span>
+					</a>	
+				</div>
+				<div class="nav__item">
+					<a href="#" class="nav__contact">Contact</a>
+				</div>
+			</div>
+			<div class="nav__block logo">
+				<a href="/"><img src="./images/header/Logo.simpleat.png" alt="simpleat.logo"></a>
+			</div>
+			<div class="nav__block right">
+				<div class="nav__item">
+					<a href="#" class="nav__link demo">
+						<img src="./images/header/user.jpg" alt="user" class="nav__img-user">
+						<span class="nav__sign-in">Sign in</span>
+					</a>
+				</div>
+				<div class="nav__item">
+					<button class="nav__button button_green order-now">Order now</button>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<main class="main">
+		<section class="section food food_bg-color"> 
+			<div class="section__container food__container">
+				<div class="food__block">
+					<img src="./images/main/food/Bottles.png" alt="Food-bottles" class="food__img">
+				</div>
+				<div class="food__block">
+					<div class="food__header title-block">
+						<h1 class="title-block__title">
+							More than food
+						</h1>
+						<div class="title-block__shape">
+							<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+						</div>
+						<span class="title-block__text">
+						Everything your body needs in one bottle of Simpleat. Drink Simpleat and forget about hunger. Be the first to try nutrition designed 
+						for your needs.
+						</span>
+						<span class="title-block__text_bold">Free shipping for orders over €90</span>
+					</div>
+					<div class="food__select-area select-form">
+						<span class="select-form__block">
+							<select class="select-form__select" id="select-food">
+								<option value="12" class="select-form__option">12</option>
+								<option value="24" class="select-form__option">24</option>
+								<option value="48" class="select-form__option">48</option>
+								<option value="60" class="select-form__option">60</option>
+								<option value="72" class="select-form__option">72</option>
+								<option value="84" class="select-form__option">84</option>
+								<option value="96" class="select-form__option">96</option>
+								<option value="108" class="select-form__option">108</option>
+								<option value="120" class="select-form__option">120</option>
+							</select>
+						</span>
+						<div class="select-form__check-block">
+							<div class="select-form__purchase">
+								<label class="select-form__label">
+									<div class="select-form__check-area checked">
+										<span class="select-form__check-point"></span>
+									</div>
+									<input type="checkbox" class="select-form__check" id="check-purchase" checked="">
+									<div class="select-form__text-1">
+										On-Time
+										<p class="select-form__text-2">Purchase</p>
+									</div>
+								</label>
+							</div>
+							<div class="select-form__subscribe">
+								<label class="select-form__label">
+									<div class="select-form__check-area ">
+										<span class="select-form__check-point"></span>
+									</div>
+									<input type="checkbox" class="select-form__check" id="check-subscribe">
+									<div class="select-form__text-1">
+										On-Time
+										<p class="select-form__text-2">Purchase</p>
+									</div>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="food__subscribe">
+						<div class="food__text-block">
+							<span class="food__total-cost" id="total-cost">€32</span><br>
+							<span class="food__text">
+							€2.60 per meal (400 kcal)</span>
+						</div>
+						<button class="food__button button_green demo">Add to cart</button>
+					</div>
+				</div>				
+			</div>
+		</section>
+		<section class="section w-simpleat w-simpleat_bg-color">
+			<div class="section__container w-simpleat__container">
+				<div class="w-simpleat__header title-block">
+					<h2 class="title-block__title text-white">
+						What is Simpleat?
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+					<span class="title-block__text text-white">
+						Simpleat is made to provide the perfectly balanced diet with every nutrient your body needs for optimal health.
+						Simpleat will take care of your hunger while you have more important things to do whether it is your work, business, travel or simply having fun.
+					</span>
+				</div>
+				<div class="w-simpleat__video-content">
+					<div class="w-simpleat__svg-content">
+						<img class="w-simpleat__svg-image" src="./images/main/whatsimpleat/play.svg" id="video-play" alt="Play button">
+						<p class="w-simpleat__text">Play video</p>
+					</div>
+					<img class="w-simpleat__image" src="./images/main/whatsimpleat/video-image.jpg" alt="Simpleat Video">
+				</div>
+			</div>
+		</section>
+		<section class="section why">
+			<div class="section__container why__container">
+				<div class="title-block">
+					<h2 class="title-block__title">
+						Why simpleat?
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+					<span class="title-block__text">
+						Enjoy all the benefits of Simpleat.
+					</span>
+				</div>
+				<div class="why__main">
+					<div class="card">
+						<div class="card__picture-block">
+							<div class="card__front-color color_green">
+								<img  class="card__front-picture" src="./images/main/whysimpleat/plate1.png" alt="Plate 1">
+							</div>
+							<img class="card__picture" src="./images/main/whysimpleat/card-mini1.jpg" alt="food">
+						</div>
+						<div class="card__text-block">
+							<h3 class="card__title">Complete nutrition</h3>
+							<span class="card__about-text">One bottle of Simleat provides 20% of your daiyly needs for calories and micronutrients
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<div class="card__front-color color_skyblue">
+								<img  class="card__front-picture" src="./images/main/whysimpleat/time.png" alt="Plate 1">
+							</div>
+							<img class="card__picture" src="./images/main/whysimpleat/card-mini2.jpg" alt="food">
+						</div>
+						<div class="card__text-block">
+							<h3 class="card__title">Save time</h3>
+							<span class="card__about-text">Spend your time on business, sport, work, family or fun. Simpleat will take care of your nutrition. 
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<div class="card__front-color color_cyan">
+								<img  class="card__front-picture" src="./images/main/whysimpleat/moneybox.png" alt="Plate 1">
+							</div>
+							<img class="card__picture" src="./images/main/whysimpleat/card-mini3.jpg" alt="food">
+						</div>
+						<div class="card__text-block">
+							<h3 class="card__title">Save money</h3>
+							<span class="card__about-text">Reasonable price for a complete, balanced and healthy meal. 
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<div class="card__front-color color_rose">
+								<img  class="card__front-picture" src="./images/main/whysimpleat/heart.png" alt="Plate 1">
+							</div>
+							<img class="card__picture" src="./images/main/whysimpleat/card-mini4.jpg" alt="food">
+						</div>
+						<div class="card__text-block">
+							<h3 class="card__title">Great health</h3>
+							<span class="card__about-text">Simpleat helps your body to stay healthy and vibrant.
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<div class="card__front-color color_orange">
+								<img  class="card__front-picture" src="./images/main/whysimpleat/charging.png" alt="Plate 1">
+							</div>
+							<img class="card__picture" src="./images/main/whysimpleat/card-mini5.jpg" alt="food">
+						</div>
+						<div class="card__text-block">
+							<h3 class="card__title">High energy</h3>
+							<span class="card__about-text">No sugar spikes, only sustainable level of energy.
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<div class="card__front-color color_pink">
+								<img  class="card__front-picture" src="./images/main/whysimpleat/plate2.png" alt="Plate 1">
+							</div>
+							<img class="card__picture" src="./images/main/whysimpleat/card-mini6.jpg" alt="food">
+						</div>
+						<div class="card__text-block">
+							<h3 class="card__title">No hunger</h3>
+							<span class="card__about-text">A bottle of Simpleat immediately saves you from hunger and satisfy your body needs. 
+							</span>
+						</div>
+					</div>
+				</div>
+				<div class="why__order">
+					<button class="why__button button_green demo">Order Simpleat</button>
+				</div>
+			</div>
+		</section>
+		<section class="section testimonial testimonial_bg-color">
+			<div class="section__container testimonial__container">
+				<div class="title-block testimonial__header">
+					<h2 class="title-block__title">
+						Testimonial
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+					<span class="title-block__text">Simpleat is made to provide the perfectly balanced diet with every nutrient your body needs for optimal health.
+					</span>
+				</div>
+				<div class="testimonial__frame-content">
+					<div class="frame-card">
+						<div class="frame-card__image-block">
+							<img src="./images/main/photocard/foto1.jpg" alt="Face-1" class="frame-card__picture">
+						</div>
+						<div class="frame-card__front-content">
+							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
+							<p class="frame-card__text">Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum </p>
+						</div>
+						<div class="frame-card__play-img frame-card_hovered">
+							<img src="./images/main/whatsimpleat/play.svg" alt="Play button">
+						</div>
+					</div>
+					<div class="frame-card">
+						<div class="frame-card__image-block">
+							<img src="./images/main/photocard/foto2.jpg" alt="Face-1" class="frame-card__picture">
+						</div>
+						<div class="frame-card__front-content">
+							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
+							<p class="frame-card__text">Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum </p>
+						</div>
+						<div class="frame-card__play-img frame-card_hovered">
+							<img src="./images/main/whatsimpleat/play.svg" alt="Play button">
+						</div>
+					</div>
+					<div class="frame-card">
+						<div class="frame-card__image-block">
+							<img src="./images/main/photocard/foto3.jpg" alt="Face-1" class="frame-card__picture">
+						</div>
+						<div class="frame-card__front-content">
+							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
+							<p class="frame-card__text">Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum </p>
+						</div>
+						<div class="frame-card__play-img frame-card_hovered">
+							<img src="./images/main/whatsimpleat/play.svg" alt="Play button">
+						</div>
+					</div>
+					<div class="frame-card">
+						<div class="frame-card__image-block">
+							<img src="./images/main/photocard/foto4.jpg" alt="Face-1" class="frame-card__picture">
+						</div>
+						<div class="frame-card__front-content">
+							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
+							<p class="frame-card__text">Lorem ipsum dolor sit elit,sed do eiusmod elit,sed do eiusmod ipsum </p>
+						</div>
+						<div class="frame-card__play-img frame-card_hovered">
+							<img src="./images/main/whatsimpleat/play.svg" alt="Play button">
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section ingredients">
+			<div class="section__container ingredients__container">
+				<div class="title-block">
+					<h2 class="title-block__title">
+						Main ingredients
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+					<span class="title-block__text">What is inside Simpleat?
+					</span>
+				</div>
+				<div class="ingredients__card-container">
+					<div class="card">
+						<div class="card__picture-block">
+							<img class="card__picture" src="./images/main/ingrediets/soybean.jpg" alt="food">
+						</div>
+						<div class="card__text-block ingredients_padding-20">
+							<h3 class="card__title">Soybean protein</h3>
+							<span class="card__about-text">Soy is a complete protein and rich in vitamins and minerals. Soybean protein provides all the essential amino acids in the amounts needed for human health. 
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<img class="card__picture" src="./images/main/ingrediets/oils.jpg" alt="food">
+						</div>
+						<div class="card__text-block ingredients_padding-20">
+							<h3 class="card__title">Oils</h3>
+							<span class="card__about-text">The perfect mix of lipids from sea algae, coconut, sunflower, flaxseed and canola. Rich with omega-3, unsaturated fatty acids DHA and EPA, which contribute to the normal function of the heart and brain function. 
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<img class="card__picture" src="./images/main/ingrediets/oatflour.jpg" alt="food">
+						</div>
+						<div class="card__text-block ingredients_padding-20">
+							<h3 class="card__title">Oat flour</h3>
+							<span class="card__about-text">Oat flour is made from whole oats and contains beta-glucans. This fiber have shown to lower risk factors for heart disease such as high cholesterol and high blood pressure. 
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<img class="card__picture" src="./images/main/ingrediets/isomaltulose.jpg" alt="food">
+						</div>
+						<div class="card__text-block ingredients_padding-20">
+							<h3 class="card__title">Isomaltulose</h3>
+							<span class="card__about-text">Isomaltulose is a natural occurring disaccharide. It keeps you energetic without the spikes of refined sugar. 
+							</span>
+						</div>
+					</div>
+					<div class="card">
+						<div class="card__picture-block">
+							<img class="card__picture" src="./images/main/ingrediets/vitamins.jpg" alt="food">
+						</div>
+						<div class="card__text-block ingredients_padding-20">
+							<h3 class="card__title">Minerals & Vitamins</h3>
+							<span class="card__about-text">A bottle of Simpleat contains 20% of daily requirements of all micronutrients for your body. 
+							</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="section facts">
+			<div class="section__container facts__container">
+				<div class="title-block">
+					<h2 class="title-block__title">
+						Nutritional Facts
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+				</div>
+				<div class="facts__body">
+					<div class="facts__left-side">
+						<div class="about">
+							<div class="about__block-text">
+								<h4 class="about__title">Energy</h4>
+							    <p class="about__about">400 kcal in one bottle <br> 
+							    20% of your daily needs</p>
+							</div>
+							<div class="about__block-image">
+								<img class="about__picture" src="./images/main/facts/h2o.png" alt="">
+							</div>
+						</div>
+						<div class="about facts_shift-left">
+							<div class="about__block-text">
+								<h4 class="about__title">Nutrients</h4>
+							    <p class="about__about">25 micronutrients <br>
+							    20% of your daily requirements <br>in each bottle</p>
+							</div>
+							<div class="about__block-image">
+								<img class="about__picture" src="./images/main/facts/food.png" alt="">
+							</div>
+						</div>
+						<div class="about">
+							<div class="about__block-text">
+								<h4 class="about__title">Neutral pleasant taste</h4>
+							    <p class="about__about">Enjoy Simpleat's neutral taste <br>several times a day and never get tired</p>
+							</div>
+							<div class="about__block-image">
+								<img class="about__picture" src="./images/main/facts/2bottles.png" alt="">
+							</div>
+						</div>
+					</div>
+					<div class="facts__left-shape">
+						<img src="./images/main/facts/ellips-left.png" alt="">
+					</div>
+					<div class="facts__center-side">
+						<img class="facts__picture" src="./images/main/facts/bottle.png" alt="">
+					</div>
+					<div class="facts__right-shape">
+						<img src="images/main/facts/ellips-right.png" alt="">
+					</div>
+					<div class="facts__right-side">
+						<div class="about about_revers">
+							<div class="about__block-text ">
+								<h4 class="about__title">Vegan, lactose-free, nut-free</h4>
+							    <p class="about__about">Easy to make food descisions.</p>
+							</div>
+							<div class="about__block-image">
+								<img class="about__picture" src="./images/main/facts/heart.png" alt="">
+							</div>
+						</div>
+						<div class="about about_revers facts_shift-right">
+							<div class="about__block-text">
+								<h4 class="about__title">Scientifically approved</h4>
+							    <p class="about__about">Simpleat is designed in a lab, <br> based on clinical studies and <br>produced using the latest <br> high-tech.</p>
+							</div>
+							<div class="about__block-image">
+								<img class="about__picture" src="./images/main/facts/element.png" alt="">
+							</div>
+						</div>
+						<div class="about about_revers">
+							<div class="about__block-text">
+								<h4 class="about__title">Anywhere you go</h4>
+							    <p class="about__about">1-year shelf life and no refrigeration <br>required. Excellent nutrition is always <br> with you.</p>
+							</div>
+							<div class="about__block-image">
+								<img class="about__picture" src="./images/main/facts/plant.png" alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="facts__footer">
+					<a class="facts__download-link" href="./download/simpleat.pdf" download="./download/simpleat.pdf">Download PDF</a>
+					<button class="button_green facts_button order-now">Order now</button>
+				</div>
+			</div>
+		</section>
+		<section class="section grafic">
+			<div class="section__container grafic__container">
+				<div class="title-block">
+					<h2 class="title-block__title">
+						Low glycemic and insulin index
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+					<span class="title-block__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+					</span>
+				</div>
+				<div class="grafic__grafic-block">
+					<img src="images/main/grafic/grafict.png" alt="Grafic-pic.1" class="grafic__image">
+				</div>
+			</div>
+		</section>
+		<section class="section super-food super-food_bg-color">
+			<div class="section__container super-food__container">
+				<div class="title-block">
+					<h2 class="title-block__title">
+						Simpleat — Super food
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+					<span class="title-block__text">Nutritional Profile. Click on the Title to learm more
+					</span><br>
+				</div>
+				<div class="super-food__tabs">
+					<div class="super-food__tab super-food_active" data-id="1">Macronutreins</div>
+					<div class="super-food__tab" data-id="2">Vitamins</div>
+					<div class="super-food__tab" data-id="3">Minerals</div>
+				</div>
+				<div class="super-food__table-row">
+					<div class="super-food__side-block">
+						<div class="super-food__front-block">
+						What's inside?</div>
+						<img class="super-food__picture" src="./images/main/table/bottle.png" alt="Bottle">
+					</div>
+					<div class="super-food__side-table">
+						<table class="table table_food" id="table"></table>
+					</div>
+					
+				</div>
+				<div class="super-food__footer">
+					<button class="button_green super-food_button order-now">Order now</button>
+				</div>
+			</div>
+		</section>
+		<section class="section joinus">
+			<div class="section__container joinus__container">
+				<div class="title-block">
+					<h2 class="title-block__title">
+						Join us
+					</h2>
+					<div class="title-block__shape">
+						<img src="./images/main/shape.png" alt="Shape" class="title-block__img">
+					</div>
+					<span class="title-block__text">Stay updated, enjoy special 
+						offers and bonuses
+					</span>
+				</div>
+				<form class="joinus__form-row">
+					<div class="joinus__input-block">
+						<input class="joinus__input" type="email" placeholder="Your e-mail" required>
+					</div>
+					<button type="submit" class="button_green joinus__button">Sign up!</button>
+				</form>
+			</div>
+		</section>
+		<aside>
+			<div class="popup-demo" id="popup-demo">
+				<div class="popup-demo__message-box">
+					<div class="popup-demo__text">
+						This function don`t work in 
+						<strong>DEMO</strong> version!
+					</div>
+				</div>
+			</div>
+			<div class="popup-demo" id="popup-lang">
+				<div class="popup-demo__message-box">
+					<h2 class="popup-demo__title">Changing Language!</h2>
+					<div class="popup-demo__text">
+						Please wait... <strong>DEMO</strong>
+					</div>
+				</div>
+			</div>
+			<div class="video-popup">
+				<div class="video-popup__container animate">
+					<video class="video-popup__video" src="video/simpleat.mp4" controls poster="./images/main/food/Bottles.png" muted>
+						<source src="./video/simpleat.mp4">
+					</video>
+					<div class="video-popup__close" id="video-close">X</div>
+				</div>
+			</div>	
+		</aside>
+	</main>
+	<footer class="footer">
+		<div class="footer__container footer__container_m50">
+			<div class="footer__main">
+				<div class="footer__network-links">
+					<a class="footer__link" href="https://www.facebook.com">
+						<img class="footer__link-pic" src="./images/footer/logo/f-logo.png" alt="facebook">
+					</a>
+					<a class="footer__link" href="https://www.twitter.com">
+						<img class="footer__link-pic" src="./images/footer/logo/t-logo.png" alt="facebook">
+					</a>
+					<a class="footer__link" href="https://www.instagram.com">
+						<img class="footer__link-pic" src="./images/footer/logo/ins-logo.png" alt="facebook">
+					</a>
+					<a class="footer__link-text" href="/">BLOG</a>
+					<a class="footer__link-text" href="/">FAQ</a>
+					<a class="footer__link-text" href="/">LEGAL</a>
+				</div>
+				<div class="footer__logo">
+					
+				</div>
+			</div>
+		</div>
+		<div class="footer__container footer__container_m20">
+			<div class="footer__row">
+				<div class="contacts">
+					<a class="contacts__link" href="tel:+123 456-789-000">
+						<img src="./images/footer/logo/tel-logo.png" alt="tel" class="contacts__logo">
+					</a>
+					<a class="contacts__link" href="tel:+123 456-789-000">+123 456-789-000
+						<p class="contacts__text">Every day from 8 AM - 8 PM</p>
+					</a>
+				</div>
+				<div class="contacts">
+					<a class="contacts__link" href="tel:+123 456-789-000">
+						<img src="./images/footer/logo/mail-logo.png" alt="tel" class="contacts__logo">
+					</a>
+					<a class="contacts__link" href="mailto:info@simleat.me">info@simleat.me
+						<p class="contacts__text">We will respond ASAP</p>
+					</a>
+				</div>
+				<div class="footer__language dropup">
+					<div class="dropup__container" id="dropup">
+						<img class="dropup__container-img"src="./images/footer/dropup/english.png" alt="language">
+						<span class="dropup__text">English</span>
+					</div>
+					<ul class="dropup__list" id="dropup-list">
+						<li class="dropup__item language" data-lang="eng" >
+							<img class="dropup__item-img" src="./images/footer/dropup/english.png" alt="eng">
+							<span class="dropup__text">English</span>
+						</li>
+						<li class="dropup__item language" data-lang="rus">
+							<img class="dropup__item-img" src="./images/footer/dropup/russian1.png" alt="ru">
+							<span class="dropup__text">Russian</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<script src="js/main.js"></script>
+</body>
+</html>

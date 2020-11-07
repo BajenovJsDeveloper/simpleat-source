@@ -1,0 +1,24 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+.main{
+	.grafic{
+		@include flexBox();
+		&__container{
+			display: grid;
+			grid-template-columns: 1fr;
+			justify-items: center;
+			grid-gap: 40px;
+		}
+		&__grafic-block{
+			min-width: 200px;
+			max-width: 700px;
+		}
+		&__image{}
+	}
+
+}

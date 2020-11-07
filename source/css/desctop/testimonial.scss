@@ -1,0 +1,96 @@
+@mixin flexBox($justify: center, $align: center, $direction: row){
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@mixin screen_768 {
+	@media screen and(max-width: 768px){
+		@content;
+	}
+}
+
+@mixin screen_576 {
+	@media screen and(max-width: 576px){
+		@content;
+	}
+}
+
+.frame-card{
+		position: relative;
+		border-radius: 10px;
+		overflow: hidden;
+		&__image-block{
+			@include flexBox();
+		}
+		&__picture{}
+		&__front-content{
+			@include flexBox(flex-end, flex-start, column);
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			padding: 15px;
+			background-color: rgba(0, 0, 0, 0.2);
+			text-align: left;
+			color: white;
+			font-size: 13px;
+
+		}
+		&__text-title{
+			text-align: left;
+			margin-bottom: 0.8rem;
+		}
+		&__text{
+			text-align: left;
+		}
+		&__play-img{
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			width: 32px;
+			transition: 0.3s;
+		}
+		&_hovered{
+			cursor: pointer;
+			&:hover{
+				transform: scale(1.4);	
+			}
+		}
+}
+.main{
+	.section{
+		&__container{}
+	}
+	.testimonial{
+		&_bg-color{
+			background-color: rgba(240, 246, 244, 1);
+		}
+	}
+	.testimonial{
+		@include flexBox();
+		padding: 80px 0 100px 0;
+		&__container{
+			grid-template-columns: 1fr;
+			grid-template-rows: min-content 1fr;
+			grid-gap: 40px;
+			justify-items: center;
+		}
+		&__frame-content{
+			display: grid;
+			grid-template-columns: repeat(4, minmax(150px, 300px));
+			grid-gap: 25px;
+			@include screen_768 {
+				grid-template-columns: repeat(2, 1fr);
+				grid-template-rows: repeat(2, min-content);
+			}
+			@include screen_576 {
+				grid-template-columns: minmax(250px,300px);
+				grid-template-rows: repeat(4, min-content);
+			}
+		}
+		&__header{}
+	}
+}
