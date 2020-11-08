@@ -11,6 +11,7 @@
 	grid-template-rows: $row;
 	justify-items: $just;
 	align-items: $align;
+	justify-content: center;
 }
 
 @mixin screen_768 {

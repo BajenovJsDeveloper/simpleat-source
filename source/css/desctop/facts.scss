@@ -1,16 +1,8 @@
-@mixin flexBox($justify: center, $align: center, $direction: row){
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
-}
+@import "mixins.scss";
+@import "colors.scss";
 
-$colorDownloadLink: rgba(120, 188, 97, 1);
 .about{
-	display: grid;
-	grid-template-columns: 3fr minmax(35px, 75px);
-	align-items: center;
-	justify-items: end;
+	@include gridBox(3fr minmax(35px, 75px), auto, end, center);
 	margin-bottom: 35px;
 	&:last-child{
 		margin-bottom: 0;
@@ -20,15 +12,18 @@ $colorDownloadLink: rgba(120, 188, 97, 1);
 	}
 	&__title{
 		font-family: "Montserrat";
-		font-size: 18px;
+		font-size: 1.125rem;
 		font-weight: bold;
 		text-align: inherit;
 		padding-bottom: 13px;
 	}
 	&__about{
 		font-family: "Montserrat";
-		font-size: 14px;
+		font-size: 0.875rem;
 		text-align: inherit;
+		@include screen_576{
+			font-size: 0.75rem
+		}
 	}
 	&__block-image{
 
@@ -55,7 +50,7 @@ $colorDownloadLink: rgba(120, 188, 97, 1);
 .main{
 	.facts{
 		@include flexBox();
-		background-color: rgba(240, 246, 244, 1);
+		background-color: $colorSection-1;
 		&__container{
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(3, min-content);
@@ -64,10 +59,8 @@ $colorDownloadLink: rgba(120, 188, 97, 1);
 			grid-gap: 18px;
 		}
 		&__body{
-			display: grid;
-			grid-template-columns: 4fr 1fr 2fr 1fr 4fr;
+			@include gridBox(4fr 1fr 2fr 1fr 4fr);
 			grid-gap: 28px;
-			align-items: center;
 			@media screen and(max-width: 992px){
 				grid-template-rows: repeat(3, min-content);
 				grid-template-columns: 1fr 2fr 1fr;
@@ -124,7 +117,7 @@ $colorDownloadLink: rgba(120, 188, 97, 1);
 		}
 		&_button{
 			padding: 22px 53px;
-			font-size: 18px;
+			font-size: 1.125rem;
 		}
 		&_shift-left{
 			position: relative;
@@ -133,6 +126,11 @@ $colorDownloadLink: rgba(120, 188, 97, 1);
 		&_shift-right{
 			position: relative;
 			left: 40px;
+		}
+		@include screen_576{
+			&_shift-left, &_shift-right{
+				position: static;	
+			}
 		}
 	}
 }

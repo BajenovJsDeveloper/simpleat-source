@@ -1,4 +1,5 @@
-@import "./mixins.scss";
+@import "mixins.scss";
+@import "colors.scss";
 
 @keyframes rotateIn{
 	0%{transform: translateY(-200px) rotateX(30deg) scale(0.7);}
@@ -13,7 +14,7 @@
 		left: 0;
 		width: 100vw;
 		height: 100vh;
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: $colorPopupDemoBG;
 		z-index:1000;
 		perspective: 100px;
 		overflow-y: auto; 
@@ -22,10 +23,10 @@
 			padding: 30px;
 			margin:10px;
 			max-width: 700px;
-			background-color: rgba(0, 0, 0, 0.78);
+			background-color: $colorPopupMesageBG;
 			border-radius: 6px;
 			box-shadow:  0 10px 15px black;
-			color: white;
+			color: $colorWhite;
 			&.show{
 				animation-name: rotateIn;
 				animation-duration: 0.7s;
@@ -39,7 +40,7 @@
 		}
 		&__title{
 			padding: 20px 0;
-			border-bottom: 1px solid white
+			border-bottom: 1px solid $colorWhite;
 		}
 		
 		display: flex;

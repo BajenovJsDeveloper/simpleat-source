@@ -1,9 +1,4 @@
-@mixin flexBox($justify: center, $align: center, $direction: row){
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
-}
+@import "mixins.scss";
 
 .main{
 	.ingredients{
@@ -16,10 +11,7 @@
 			grid-gap: 40px;
 		}
 		&__card-container{
-			display: grid;
-			grid-template-columns: repeat(5, minmax(120px, 197px));
-			justify-content: center;
-			justify-items: center;
+			@include gridBox(repeat(5, minmax(120px, 197px)), auto, center, start);
 			grid-gap: 40px;
 			@media screen and(max-width: 768px){
 				grid-template-columns: repeat(2, minmax(120px, 197px));

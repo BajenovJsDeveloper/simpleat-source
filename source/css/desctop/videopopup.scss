@@ -1,4 +1,5 @@
-@import '../desctop/mixins.scss';
+@import "mixins.scss";
+@import "colors.scss";
 
 @keyframes jumpIn{
   0%{
@@ -13,7 +14,6 @@
   animation-name: jumpIn;
   animation-duration: 0.7s;
 }
-
 .video-popup{
     position: fixed;
     top:0;
@@ -24,22 +24,19 @@
     padding: 20px;
     justify-content: center;
     align-items: center;
-    background-color: rgba(0,0,0,0.7);
+    background-color: $colorVideoPopupBG;
     opacity: 0;
     perspective: 80px;
     z-index: 500;
     &__container{
+      @include flexBox(center,center,column);
       position: relative;
       max-width: 700px;
       min-width: 260px;
-      display: flex;
-      flex-direction: column;
-      justify-content:center;
-      align-items: center;
-      border: 1px solid white;
+      border: 1px solid $colorWhite;
       padding: 15px;
-      box-shadow: 0 15px 15px black;
-      background-color: black;
+      box-shadow: 0 15px 15px $colorBlack;
+      background-color: $colorBlack;
       transform: rotateX(0);
     }
     &__video{
@@ -57,16 +54,16 @@
       	right: 20px;
       	width: 40px;
       	height: 40px;
-      	color: white;
+      	color: $colorWhite;
       	font-size: 1rem;
       	cursor: pointer;
       	border-radius: 50%;
       	padding: 5px;
-      	border: 1px solid white;
-      	background: rgba(49, 49, 49, 1);
+      	border: 1px solid $colorWhite;
+      	background: $colorVideoPopupCloseBG;
       	transition: 0.3s;
       	&:hover{
-      		background: lighten(rgba(49, 49, 49, 1), 50%);
+      		background: lighten($colorVideoPopupCloseBG, 30%);
       		transform: scale(1.3);
       	}
     }

@@ -1,23 +1,26 @@
 @import "./mixins.scss";
+@import "colors.scss";
 
 .header{
 	width: 100vw;
 	position: fixed;
 	top: 0;
 	left: 0;
-	// @include flexBox(center,center,row);
-	background-color: #f0f6f4;
+	@include flexBox();
+	background-color: $colorHeaderBG;
 	z-index: 200;
 	.nav{
+		@include gridBox(2fr 7fr 1fr 2fr);
 		width: 80%;
 		min-height: 110px;
-		display: grid;
-		grid-template-columns: repeat(3, auto);
 		margin: 0 auto;
 		&__block{
 			@include flexBox(center,center,row);
 			&.right{
 				justify-self: end;
+				.nav__item{
+					margin-left: 70px;
+				}
 			}
 			&.left{
 				justify-self: start; 
@@ -27,7 +30,7 @@
 			}
 		}
 		&__item{
-			@include flexBox(flex-start,center,row);
+			@include flexBox(flex-end,center,row);
 		}
 		&__link{
 			@include flexBox(flex-start,center,row);
@@ -47,16 +50,63 @@
 		&__img-cart{}
 	}
 	.nav{
-		@media screen and (max-width: 768px){
+		@include screen_768{
 			grid-template-columns: 1fr;
-			grid-template-rows: repeat(3, auto);
+			grid-template-rows: repeat(4, auto);
 			margin: 10px 0;
+			&__item{
+				justify-content: center;
+			}
+			&__button{
+				margin: 5px;
+			}
 			&__block{
 				&.right, &.left{
 					justify-self: center;
 					width: 100%;
 				}
+				&.right{
+					.nav__item{
+						margin-left: 0;
+					}
+				}
 				&.logo{
+				}
+			}
+
+		}
+		@include screen_576{
+			@include gridBox(1fr 1fr, repeat(3, auto), flex-start, center);
+			margin: 10px 0;
+			min-width: 250px;
+			&__item{
+				justify-self: end;
+			}
+			&__button{
+				margin: 5px 0px;
+			}
+			&__block{
+				font-size: 0.75rem;
+				&.right{
+					justify-self: center;
+					width: 100%;
+					justify-content: flex-start;
+					grid-column: 1/2;
+					grid-row: 1/2;
+				}
+				&.left{
+					flex-direction: column;
+					width: 100%;
+					align-items: flex-start;
+					grid-column: 1/2;
+					grid-row: 2/3;
+					.nav__contact{
+						margin: 20px 0 0 0;
+					}
+				}
+
+				&.logo{
+					justify-self: end;
 				}
 			}
 			

@@ -4,11 +4,13 @@
   "main": "index.js",
   "author": "Vladimir",
   "license": "MIT",
-  "homepage":"https://bajenovjsdeveloper.github.io/simpleat",
-  "script": {
+  "homepage": "https://bajenovjsdeveloper.github.io/simpleat",
+  "scripts": {
+    "build": "parcel build source/index.html --public-url /simpleat --no-content-hash",
     "start": "parcel source/index.html --no-cache",
     "deploy": "gh-pages -d dist",
-    "predeploy": "parcel build source/index.html"
+    "predeploy": "yarn build",
+    "prettier": "prettier --write source/**/*.js"
   },
   "dependencies": {
     "autoprefixer": "^9.0.0",
@@ -20,6 +22,7 @@
   },
   "devDependencies": {
     "gh-pages": "^3.1.0",
+    "prettier": "^2.1.2",
     "sass": "^1.27.1"
   }
 }

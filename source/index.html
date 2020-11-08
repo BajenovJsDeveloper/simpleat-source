@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Simpleat</title>
 	<link rel="stylesheet" href="css/main.scss">
+	<link rel="icon" href="icon/Logo-icon.png">
 	<meta name="Vladimir" content="Simpleat">
 </head>
 <body>
@@ -31,9 +32,9 @@
 						<span class="nav__sign-in">Sign in</span>
 					</a>
 				</div>
-				<div class="nav__item">
+			</div>
+			<div class="nav__item">
 					<button class="nav__button button_green order-now">Order now</button>
-				</div>
 			</div>
 		</nav>
 	</header>
@@ -91,8 +92,8 @@
 									</div>
 									<input type="checkbox" class="select-form__check" id="check-subscribe">
 									<div class="select-form__text-1">
-										On-Time
-										<p class="select-form__text-2">Purchase</p>
+										Subscribe
+										<p class="select-form__text-2">and save 5%</p>
 									</div>
 								</label>
 							</div>
@@ -245,7 +246,9 @@
 				<div class="testimonial__frame-content">
 					<div class="frame-card">
 						<div class="frame-card__image-block">
-							<img src="./images/main/photocard/foto1.jpg" alt="Face-1" class="frame-card__picture">
+							<video muted src="#" poster="./images/main/photocard/foto1.jpg">
+								<source src="#">
+							</video>
 						</div>
 						<div class="frame-card__front-content">
 							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
@@ -257,7 +260,9 @@
 					</div>
 					<div class="frame-card">
 						<div class="frame-card__image-block">
-							<img src="./images/main/photocard/foto2.jpg" alt="Face-1" class="frame-card__picture">
+							<video muted src="#" poster="./images/main/photocard/foto2.jpg">
+								<!-- <source src="#"> -->
+							</video>
 						</div>
 						<div class="frame-card__front-content">
 							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
@@ -269,7 +274,9 @@
 					</div>
 					<div class="frame-card">
 						<div class="frame-card__image-block">
-							<img src="./images/main/photocard/foto3.jpg" alt="Face-1" class="frame-card__picture">
+							<video muted src="#" poster="./images/main/photocard/foto3.jpg">
+								<!-- <source src="#"> -->
+							</video>
 						</div>
 						<div class="frame-card__front-content">
 							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
@@ -281,7 +288,9 @@
 					</div>
 					<div class="frame-card">
 						<div class="frame-card__image-block">
-							<img src="./images/main/photocard/foto4.jpg" alt="Face-1" class="frame-card__picture">
+							<video muted src="#" poster="./images/main/photocard/foto4.jpg">
+								<!-- <source src="#"> -->
+							</video>
 						</div>
 						<div class="frame-card__front-content">
 							<h4 class="frame-card__text-title">Anna, 25  •  Manager </h4>
@@ -519,6 +528,14 @@
 			</div>
 		</section>
 		<aside>
+			<div class="popup-cookie" id="popup-cookie">
+				<div class="popup-cookie__container">
+					<img class="popup-cookie__icon" src="./images/main/cookie/info.png" alt="atention">					
+					<div class="popup-cookie__message">This website uses cookies. The information in the cookies is used to provide the best experience for you on our website.
+					</div>
+					<button class="popup-cookie__button button_green" id="close-cookie">I agree</button>
+				</div>
+			</div>
 			<div class="popup-demo" id="popup-demo">
 				<div class="popup-demo__message-box">
 					<div class="popup-demo__text">

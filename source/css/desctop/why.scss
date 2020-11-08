@@ -1,16 +1,8 @@
-@mixin flexBox($justify: center, $align: center, $direction: row){
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
-}
+@import "mixins.scss";
+@import "colors.scss";
 
 .card{
-	display: grid;
-	grid-template-columns: auto;
-	grid-template-rows: min-content 1fr;
-	justify-content: center;
-	justify-items: center;
+	@include gridBox(auto, min-content 1fr);
 	grid-gap: 40px;
 	&__picture-block{
 		@include flexBox();
@@ -41,22 +33,22 @@
 		height: 100%;
 		&.color{
 			&_pink{
-				background-color: rgba(230, 156, 227, 0.42);
+				background-color: $colorWhyCard1;
 			}
 			&_orange{
-				background-color: rgba(218, 183, 80, 0.42)
+				background-color: $colorWhyCard2;
 			}
 			&_rose{
-				background-color: rgba(244, 168, 177, 0.42)
+				background-color: $colorWhyCard3;
 			}
 			&_cyan{
-				background-color: rgba(122, 196, 194, 0.42);
+				background-color: $colorWhyCard4;
 			}
 			&_skyblue{
-				background-color: rgba(96, 184, 230, 0.42)
+				background-color: $colorWhyCard5;
 			}
 			&_green{
-				background-color: rgba(98, 174, 77, 0.42)
+				background-color: $colorWhyCard6;
 			}
 		}
 	}
@@ -77,10 +69,8 @@
 			white-space: nowrap;
 		}
 		&__main{
-			display: grid;
-			grid-template-columns: repeat(6, minmax(95px, 168px));
-			justify-content: center;
-			justify-items: center;
+			@include gridBox(repeat(6, minmax(95px, 168px)), auto, center, start);
+
 			grid-gap: 25px;
 			@media screen and(max-width: 860px){
 				grid-template-columns: repeat(3, minmax(95px, 168px));

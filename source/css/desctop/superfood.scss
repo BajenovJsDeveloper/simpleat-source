@@ -1,9 +1,5 @@
-@mixin flexBox($justify: center, $align: center, $direction: row){
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
-}
+@import "mixins.scss";
+@import "colors.scss";
 
 .table{
 	&_food{
@@ -14,17 +10,26 @@
 		&>thead>tr th{
 			text-align: left;
 			padding: 5px 25px 0;
-			border-bottom: 1px solid rgba(231, 232, 232, 1);
+			border-bottom: 1px solid $colorTableBorderBottom;
+			@include screen_576{
+				padding: 5px 5px 0;
+			}
 		}
 		&>tbody>tr td{
 			text-align: left;
 			padding: 9px 25px 0;
-			border-bottom: 1px solid rgba(231, 232, 232, 1);
-			color: rgba(65, 71, 77, 1);
+			border-bottom: 1px solid $colorTableBorderBottom;
+			color: $colorTableTD;
+			@include screen_576{
+				padding: 3px;
+			}
+			&:nth-child(2){
+				min-width: 50px;
+			}
 		}
 		&>tbody>tr td:first-child{
 			font-weight: 700;
-			color: rgba(54, 193, 186, 1);
+			color: $colorTableTitle;
 		}
 		&>tbody>tr:last-child td{
 			border-bottom: none;
@@ -36,13 +41,11 @@
 	.super-food{
 		@include flexBox();
 		&__container{
-			display: grid;
-			grid-template-columns: 1fr;
-			grid-template-rows: repeat(4, min-content);
+			@include gridBox(minmax(250px, 1fr), repeat(4, min-content));
 			grid-gap:35px;
 		}
 		&_bg-color{
-			background-color: rgba(240, 246, 244, 1);
+			background-color: $colorSuperFoodBG;
 		}
 		&__side-block{
 			position: relative;
@@ -60,18 +63,15 @@
 			width: 100%;
 			height: 100%;
 			font-size: 1.875rem;
-			background-color: rgba(255, 255, 255, 0.8);
+			background-color: $colorSuperFoodFrontBlockBG;
 		}
 		&__table-row{
-			display: grid;
-			grid-template-columns: 5fr 7fr;
-			align-items: start;
-			justify-items: center;
+			@include gridBox(5fr 7fr, auto, center, start);
 			width: 100%;
-			background-color: white;
+			background-color: $colorWhite;
 			padding: 45px 0;
-			@media screen and(max-width: 768px){
-				grid-template-columns: 1fr;
+			@include screen_768{
+				grid-template-columns: minmax(min-content, 1fr);
 				grid-template-rows: auto;
 				justify-content: center;
 				grid-gap: 35px;
@@ -79,22 +79,28 @@
 				padding: 50px;
 			}
 			@media screen and(max-width: 576px){
-				font-size: 11px;
+				font-size: 0.68rem;
+				padding: 50px 10px;
 				.super-food__side-table{
 					padding: 0;
 				}
 			}
 		}
 		&__tabs{
-			@include flexBox(space-around, center);
+			@include flexBox(space-evenly, center);
+			width: 100%;
+			@include screen_576{
+				padding: 0 30px;	
+			}
 		}
 		&__tab{
 			position: relative;
 			font-family: "Bebas Neue";
-			font-size: 24px;
+			font-size: 1.5rem;
 			font-weight: 400;
-			color: rgba(18, 25, 32, 1);
+			color: $colorSuperFoodTab;
 			padding-bottom: 8px;
+			margin: 0 5px;
 			cursor: pointer;
 			&:before{
 				position: absolute;
@@ -102,17 +108,20 @@
 				left: 100% / 2 - 70% / 2;
 				bottom: 5px;
 				width: 70%;
-				border: 2px solid rgba(18, 25, 32, 1);
+				border: 2px solid $colorSuperFoodTab;
 				transition: 0.3s;
+			}
+			@include screen_576{
+				font-size: 1.125rem;
 			}
 		}
 		&__picture{
 			max-width: 125px;
 		}
 		&_active{
-			color: rgba(54, 193, 186, 1);
+			color: $colorSuperFoodActive;
 			&:before{
-				border: 2px solid rgba(54, 193, 186, 1);
+				border: 2px solid $colorSuperFoodActive;
 			}
 			&:after{
 				position: absolute;
@@ -121,14 +130,14 @@
 				bottom: -45px;
 				width: 20px;
 				height: 20px;
-				background-color: white;
+				background-color: $colorWhite;
 				transform: rotate(45deg);
 				cursor: default;
 			}
 		}
 		&_button{
 			padding: 20px 50px;
-			font-size: 18px;
+			font-size: 1.125rem;
 		}
 		&__footer{
 			padding-top: 5px;

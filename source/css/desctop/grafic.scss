@@ -1,22 +1,16 @@
-@mixin flexBox($justify: center, $align: center, $direction: row){
-	display: flex;
-	justify-content: $justify;
-	align-items: $align;
-	flex-direction: $direction;
-}
+@import "mixins.scss";
 
 .main{
 	.grafic{
 		@include flexBox();
 		&__container{
-			display: grid;
-			grid-template-columns: 1fr;
-			justify-items: center;
+			@include gridBox(1fr);
 			grid-gap: 40px;
 		}
 		&__grafic-block{
 			min-width: 200px;
 			max-width: 700px;
+			padding: 0 10px;
 		}
 		&__image{}
 	}

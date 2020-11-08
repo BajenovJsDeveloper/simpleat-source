@@ -1,0 +1,42 @@
+@import "mixins.scss";
+@import "colors.scss";
+
+.main{
+	.popup-cookie{
+		@include flexBox();
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: $colorPopupDemoBG;
+		z-index: 200;
+		&__container{
+			@include flexBox();
+			max-width: 670px;
+			margin: 0 40px;	
+			padding: 20px 30px;
+			border-radius: 10px;
+			background-color: $colorBlockBG2;
+			box-shadow: 0 10px 15px $colorBlack;
+			@include screen_576{
+				flex-direction: column;
+				.popup-cookie__message{
+					padding: 10px 0 25px 0;
+				}
+			}
+		}
+		&__icon{
+			width: 22px;
+		}
+		&__message{
+			font-size: 0.875rem; 
+			color: $colorWhite;
+			padding: 0 25px 0 10px;
+		}
+		&__button{
+
+		}
+		display: none;
+	}
+}

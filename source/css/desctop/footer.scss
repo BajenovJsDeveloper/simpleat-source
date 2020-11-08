@@ -1,4 +1,5 @@
-@import 'mixins.scss';
+@import "mixins.scss";
+@import "colors.scss";
 
 @mixin footerBlock($padding: 10px, $color: gray){
 	width: 100%;
@@ -14,7 +15,7 @@
 		padding-right:80px;
 		@include flexBox();
 		border-radius: 6px;
-		background-color: rgba(255, 255, 255, 0.05);
+		background-color: $colorDropupBG;
 		cursor: pointer;
 		&:after{
 			position: absolute;
@@ -22,8 +23,8 @@
 			right: 15px;
 			width: 10px;
 			height:10px;
-			border-top: 1px solid white;
-			border-left: 1px solid white;
+			border-top: 1px solid $colorWhite;
+			border-left: 1px solid $colorWhite;
 			transform: rotate(45deg);
 		}
 	}
@@ -40,19 +41,17 @@
 		margin-bottom: 2px;
 		overflow: hidden;
 		border-radius: 3px;
-		background: rgba(65, 80, 93, 1);
-		box-shadow: 0 0 5px black;
+		background: $colorDropupListBG;
+		box-shadow: 0 0 5px $colorDropupListBoxShadow;
 		cursor: pointer;
-		// &_show{
-		// 	display: block;
-		// }
+		z-index: 250;
 	}
 	&__item{
 		@include flexBox();
 		padding: 5px 15px;
 		text-align: left;
 		&:hover{
-			background: lighten(rgba(65, 80, 93, 1),20%);
+			background: lighten($colorDropupItemBGhover,20%);
 		}
 	}
 	&__text{
@@ -63,9 +62,9 @@
 .contacts{
 	@include flexBox();
 	&__link{
-		color: white; 
+		color: $colorWhite; 
 		text-align: left;
-		font-size: 18px;
+		font-size: 1.125rem;
 	}
 	&__link:last-child{
 		padding: 0 30px 0 15px;
@@ -82,16 +81,16 @@
 .footer{
 	width:  100vw;
 	@include gridBox(1fr, 3fr 1fr);
-	color: white;
+	color: $colorWhite;
 	&__container{
 		@include flexBox();
 		width: 100%;
 		height: 100%;
 		&_m50{
-			@include footerBlock(50px, rgba(25, 38, 50, 1));
+			@include footerBlock(50px, $colorBlockBG1);
 		}
 		&_m20{
-			@include footerBlock(20px, rgba(18, 25, 32, 1));
+			@include footerBlock(20px, $colorBlockBG2);
 		}
 	}
 	&__main{
@@ -123,17 +122,17 @@
 		filter: invert(40%);
 	}
 	&__link-text{
-		color: white;
+		color: $colorWhite;
 		display: inline-block;
 		width: 100%;
 		padding: 9px 0;
 	}
 	&__link-text:not(:last-child){
-		border-right: 1px solid rgba(240, 246, 244, 0.2);
+		border-right: 1px solid $colorFooterLinkText;
 	}
 	&__link-text:hover{
 		transition: 0.3s;
-		color: gray;
+		color: $colorGray;
 	}
 	&__language{
 		margin-left: auto;
