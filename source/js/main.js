@@ -81,11 +81,11 @@ $(document).ready(function () {
 
   function setClickOnCheckbox(checkID1, checkID2) {
     $(`#${checkID1}`).click(function () {
-      $(".select-form__purchase")
+      $(this)
         .find(".select-form__check-area")
         .addClass("checked");
 
-      $(".select-form__subscribe")
+      $(`#${checkID2}`)
         .find(".select-form__check-area")
         .removeClass("checked");
 
@@ -95,11 +95,11 @@ $(document).ready(function () {
       subscribeState = false;
     });
     $(`#${checkID2}`).click(function () {
-      $(".select-form__subscribe")
+      $(this)
         .find(".select-form__check-area")
         .addClass("checked");
 
-      $(".select-form__purchase")
+      $(`#${checkID1}`)
         .find(".select-form__check-area")
         .removeClass("checked");
 

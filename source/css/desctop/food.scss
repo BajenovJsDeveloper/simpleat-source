@@ -147,6 +147,7 @@
 		&__purchase{}
 		&__label{
 			@include flexBox(flex-start, center);
+			cursor: pointer;
 		}
 		&__check-area{
 			@include flexBox(center,center);
