@@ -5,6 +5,7 @@
 	.food{
 		&__container{
 			@include gridBox(1fr minmax(250px, 555px));
+			grid-gap: 28px;
 			@include screen_768{
 				grid-template-columns: 1fr;
 				grid-gap: 20px;	
