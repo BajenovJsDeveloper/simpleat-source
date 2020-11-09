@@ -80,6 +80,7 @@ $(document).ready(function () {
   }
 
   function setClickOnCheckbox(checkID1, checkID2) {
+    $(`#${checkID2}`).addClass('colored');
     $(`#${checkID1}`).click(function () {
       $(this)
         .find(".select-form__check-area")
@@ -92,6 +93,8 @@ $(document).ready(function () {
       $("[name=purchase]").attr("checked", true);
       $("[name=subscribe]").removeAttr("checked");
       $(".food__button").html("Add to cart");
+      $(this).addClass('colored');
+      $(`#${checkID2}`).removeClass('colored');
       subscribeState = false;
     });
     $(`#${checkID2}`).click(function () {
@@ -106,6 +109,8 @@ $(document).ready(function () {
       $("[name=subscribe]").attr("checked", true);
       $("[name=purchase]").removeAttr("checked");
       $(".food__button").html("Subscribe");
+      $(this).addClass('colored');
+      $(`#${checkID1}`).removeClass('colored');
       subscribeState = true;
     });
   }

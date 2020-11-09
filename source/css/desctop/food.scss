@@ -4,7 +4,7 @@
 .main{
 	.food{
 		&__container{
-			@include gridBox(1fr 1fr);
+			@include gridBox(1fr minmax(250px, 555px));
 			@include screen_768{
 				grid-template-columns: 1fr;
 				grid-gap: 20px;	
@@ -67,7 +67,7 @@
 		@include flexBox(center,center,column);
 		min-width: 270px;
 		&__title{
-			font-size: 3.875rem;
+			font-size: 3.75rem;
 			font-family: 'Bebas Neue';
 			font-weight: 100;
 			line-height: 51px;
@@ -148,6 +148,10 @@
 		&__label{
 			@include flexBox(flex-start, center);
 			cursor: pointer;
+			color: $colorText1; 
+			&.colored{
+				color: $colorChecked;
+			}
 		}
 		&__check-area{
 			@include flexBox(center,center);
@@ -182,12 +186,14 @@
 		}
 		&__text-1{
 			margin-left: 18px;
-			color: $colorText1;
+			color: inherit;
 			font-weight: bold;
+			text-align: left;
 		}
 		&__text-2{
 			color: $colorText2;
 			font-weight: normal;
+			text-align: inherit;
 		}
 		&__select{
 			width: 100%;
@@ -204,6 +210,11 @@
 		    -ms-appearance: none;
 		    appearance: none !important;
 		}
-		&__option{}
+		&__option{
+			font-size: 1rem;
+		}
+		&__option:focus{
+			font-weight: 700;
+		}
 	}
 }

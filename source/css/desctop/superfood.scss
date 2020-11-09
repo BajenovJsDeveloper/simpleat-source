@@ -50,6 +50,7 @@
 		&__side-block{
 			position: relative;
 			@include flexBox();
+			width: 100%;
 		}
 		&__side-table{
 			width: 100%;
@@ -66,7 +67,7 @@
 			background-color: $colorSuperFoodFrontBlockBG;
 		}
 		&__table-row{
-			@include gridBox(5fr 7fr, auto, center, start);
+			@include gridBox(5fr 7fr, auto, center, center);
 			width: 100%;
 			background-color: $colorWhite;
 			padding: 45px 0;

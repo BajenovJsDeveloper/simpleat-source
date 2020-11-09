@@ -4,12 +4,12 @@
 	.grafic{
 		@include flexBox();
 		&__container{
-			@include gridBox(1fr);
+			@include gridBox(minmax(min-content, 758px));
 			grid-gap: 40px;
 		}
 		&__grafic-block{
 			min-width: 200px;
-			max-width: 700px;
+			max-width: 710px;
 			padding: 0 10px;
 		}
 		&__image{}

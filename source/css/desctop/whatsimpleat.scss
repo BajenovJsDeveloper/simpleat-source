@@ -5,10 +5,11 @@
 	.w-simpleat{
 		@include flexBox(center,center);
 		&__container{
-			@include gridBox(1fr 1fr, 1fr, center, center);
+			@include gridBox(min-content minmax(250px, 654px), 1fr, center, center);
+			grid-gap: 127px;
 			@media screen and(max-width: 768px){
 				grid-template-columns: minmax(250px, 1fr);
-				grid-gap: 20px;
+				grid-gap: 50px;
 			}
 		}
 		&__header{}
@@ -21,7 +22,6 @@
 			border-radius: 6px;
 			position: relative;
 			overflow: hidden;
-			min-width: 250px;
 		}
 		&__image{
 			max-width: 657px;
