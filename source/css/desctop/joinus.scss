@@ -5,8 +5,6 @@
 	.joinus{
 		@include flexBox();
 		&__container{
-			display: grid;
-			grid: auto-flow min-content / 1fr; 
 			grid-gap: 0;
 		}
 		&__form-row{
@@ -17,7 +15,7 @@
 			}
 		}
 		&__input-block{
-			@include gridBox(minmax(250px 512px));
+			@include gridBox(minmax(250px, 512px));
 			border: 2px solid $colorJoinUsInputBorder;
 			border-radius: 6px;
 			margin: 45px 1.2rem;
