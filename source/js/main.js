@@ -12,7 +12,7 @@ const SCROLLUP_SPEED = 3;
 
 $(document).ready(function () {
   let currentTabItem = $(".super-food__tab")[FIRST_ITEM];
-  let subscribeState = false;
+  let subscribeState = true;
   const closeVideo = function () {
     $(".video-popup").animate({ opacity: 0 }, ANIMATION_TIME, function () {
       $(this).css({ display: "none" });
@@ -89,8 +89,8 @@ $(document).ready(function () {
         .find(".select-form__check-area")
         .removeClass("checked");
 
-      $("#check-purchase").prop("checked", true);
-      $("#check-subscribe").prop("checked", false);
+      $("[name=purchase]").attr("checked", true);
+      $("[name=subscribe]").removeAttr("checked");
       $(".food__button").html("Add to cart");
       subscribeState = false;
     });
@@ -103,8 +103,8 @@ $(document).ready(function () {
         .find(".select-form__check-area")
         .removeClass("checked");
 
-      $("#check-subscribe").prop("checked", true);
-      $("#check-purchase").prop("checked", false);
+      $("[name=subscribe]").attr("checked", true);
+      $("[name=purchase]").removeAttr("checked");
       $(".food__button").html("Subscribe");
       subscribeState = true;
     });
