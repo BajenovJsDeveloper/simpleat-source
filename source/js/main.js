@@ -130,7 +130,7 @@ $(document).ready(function () {
         {
           opacity: 1,
         },
-        500
+        ANIMATION_TIME
       );
 
       $(`#${buttonID}`).click(function () {
@@ -138,14 +138,69 @@ $(document).ready(function () {
           {
             opacity: 0,
           },
-          500,
+          ANIMATION_TIME,
           function () {
             $(`#${cookieID}`).css({ display: "none" });
           }
         );
       });
-    }, 500);
+    }, ANIMATION_TIME);
   }
+  
+  function setClickOnPlayVideoCards(buttonsID){
+    let prevPlayedItems = [];
+    const VIDEO_ITEM = 0;
+    const IMAGE_ITEM = 1;
+    const RESET_HANDLE = 2;
+    const INITIAL_TIME = 0;
+
+    function playPause(index){
+      let togglePlay = false;
+
+      function stopPrevPlayer(curItem, curImageItem, reset){
+        console.log('prev: ',prevPlayedItems);
+        if(prevPlayedItems[VIDEO_ITEM]){
+          prevPlayedItems[VIDEO_ITEM].pause();
+          prevPlayedItems[VIDEO_ITEM].currentTime = 0;
+          prevPlayedItems[RESET_HANDLE]();
+          $(prevPlayedItems[IMAGE_ITEM]).css({opacity: 0});
+        }
+        prevPlayedItems = [curItem, curImageItem, reset];
+      }
+      
+      function togglePlayVideo(){
+        let resetTogglePlay = () =>{
+          togglePlay = false
+        }
+        let curItem =  $('.frame-card__video')[index];
+        let curImageItem = $('.frame-card__video-block')[index];
+        if(!togglePlay) {
+          stopPrevPlayer(curItem, curImageItem, resetTogglePlay);
+          curItem.play();
+          togglePlay = true;
+          console.log(curImageItem)
+          $(curImageItem).css({opacity: 1});
+        }
+        else {
+          curItem.pause();
+          curItem.currentTime = INITIAL_TIME;
+          togglePlay = false;
+          $(curImageItem).css({opacity: 0});
+        }  
+      }
+      
+      return togglePlayVideo;
+    }
+    $(`.${buttonsID}`)
+    .each(function(index, item){
+      let button = $(item).find('.frame-card__play-button');
+      $(button)
+      .on('click', playPause(index));
+    })
+    
+  }
+
+  setClickOnPlayVideoCards('frame-card');//__play-button
 
   setupCookie("popup-cookie", "close-cookie");
 

@@ -6,10 +6,42 @@
 		position: relative;
 		border-radius: 10px;
 		overflow: hidden;
-		&__image-block{
+		width: 100%;
+		height: 100%;
+		&__video-block{
 			@include flexBox();
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 50;
+			opacity: 0;
+			transition: 1s;
 		}
-		&__picture{}
+		&__video{
+			height: 100%;
+		}
+		&_novideo{
+			.frame-card__play-img{
+				display: none;
+			}
+		}
+		&__picture{
+			@include flexBox();
+			// position: absolute;
+			// top: 0;
+			// left: 0;
+			width: 100%;
+			height: 100%;
+			// z-index: 60;
+			img{
+				height: 100%;
+			}	
+		}
+		&__play-button{
+			height: 100%;
+		}
 		&__front-content{
 			@include flexBox(flex-end, flex-start, column);
 			position: absolute;
@@ -22,7 +54,7 @@
 			text-align: left;
 			color: $colorWhite;
 			font-size: 0.8125rem;
-
+			z-index: 70;
 		}
 		&__text-title{
 			text-align: left;
@@ -37,6 +69,7 @@
 			right: 1rem;
 			width: 32px;
 			transition: 0.3s;
+			z-index: 80;
 		}
 		&_hovered{
 			cursor: pointer;
@@ -67,15 +100,15 @@
 			}
 		}
 		&__frame-content{
-			@include gridBox(repeat(4, minmax(150px, 300px)));
+			@include gridBox(repeat(4, minmax(150px, 300px)), 1fr);
 			grid-gap: 25px;
 			@include screen_768 {
 				grid-template-columns: repeat(2, 1fr);
-				grid-template-rows: repeat(2, min-content);
+				grid-template-rows: repeat(2, 1fr);
 			}
 			@include screen_576 {
 				grid-template-columns: minmax(250px,300px);
-				grid-template-rows: repeat(4, min-content);
+				grid-template-rows: repeat(4, 1fr);
 			}
 		}
 		&__header{}
