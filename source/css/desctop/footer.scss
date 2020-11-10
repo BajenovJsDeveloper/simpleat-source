@@ -84,6 +84,7 @@
 	color: $colorWhite;
 	&__container{
 		@include flexBox();
+		flex-direction: column;
 		width: 100%;
 		height: 100%;
 		&_m50{
@@ -136,6 +137,9 @@
 	}
 	&__language{
 		margin-left: auto;
+	}
+	&__logo{
+		padding-top: 28px;
 	}
 	@include screen_992{
 		grid-template-rows: repeat(2,min-content);

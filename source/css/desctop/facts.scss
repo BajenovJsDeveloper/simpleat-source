@@ -57,6 +57,9 @@
 			justify-content: center;
 			justify-items: center;
 			grid-gap: 18px;
+			@include screen_576{
+				grid-template-columns: 80%;
+			}
 		}
 		&__body{
 			@include gridBox(4fr 1fr 2fr 1fr 4fr);
@@ -110,13 +113,14 @@
 		&__download-link{
 			text-decoration: underline;
 			color: $colorDownloadLink;
-			margin-bottom: 40px;
+			margin-bottom: 35px;
+			font-size: 1.0625rem;
 			&:hover{
 				color: darken($colorDownloadLink, 30%);
 			}
 		}
 		&_button{
-			padding: 22px 53px;
+			padding: 19px 50px;
 			font-size: 1.125rem;
 		}
 		&_shift-left{

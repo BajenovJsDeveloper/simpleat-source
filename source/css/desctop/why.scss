@@ -64,9 +64,13 @@
 			grid-template-columns: 1fr;
 			grid-template-rows: repeat(3, min-content);
 			grid-gap: 45px;
+			@include screen_576{
+				grid-template-columns: 80%;
+			}
 		}
 		&__button{
-			white-space: nowrap;
+			padding: 19px 53px;
+    		font-size: 18px;
 		}
 		&__main{
 			@include gridBox(repeat(6, minmax(95px, 168px)), auto, center, start);
@@ -76,7 +80,7 @@
 				grid-template-columns: repeat(3, minmax(95px, 168px));
 				grid-template-rows: repeat(2, min-content);
 			}
-			@media screen and(max-width: 576px){
+			@include screen_576{
 				grid-template-columns: repeat(2, minmax(95px, 168px));
 				grid-template-rows: repeat(3, min-content);
 			}

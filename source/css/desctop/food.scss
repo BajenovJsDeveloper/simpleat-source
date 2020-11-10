@@ -7,7 +7,7 @@
 			@include gridBox(1fr minmax(250px, 555px));
 			grid-gap: 28px;
 			@include screen_768{
-				grid-template-columns: 1fr;
+				grid-template-columns: 80%;
 				grid-gap: 20px;	
 			}
 		}
@@ -33,6 +33,7 @@
 			text-align: left;
 			margin-top: 1rem;
 			width: 100%;
+			grid-gap: 35px;
 			@include screen_576 {
 				grid-template-columns: 1fr;
 				grid-template-rows: 1fr 1fr;
@@ -139,6 +140,7 @@
 			margin-top: 15px;
 			@include gridBox(repeat(2, 1fr), 1fr, start);
 			width: 100%;
+			grid-gap: 35px;
 			@include screen_576 {
 				grid-template-rows: repeat(2, min-content);
 				grid-template-columns: 1fr;

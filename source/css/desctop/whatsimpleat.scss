@@ -8,7 +8,7 @@
 			@include gridBox(min-content minmax(250px, 654px), 1fr, center, center);
 			grid-gap: 127px;
 			@media screen and(max-width: 768px){
-				grid-template-columns: minmax(250px, 1fr);
+				grid-template-columns: minmax(250px, 80%);
 				grid-gap: 50px;
 			}
 		}

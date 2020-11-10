@@ -62,6 +62,9 @@
 			grid-template-rows: min-content 1fr;
 			grid-gap: 40px;
 			justify-items: center;
+			@include screen_576{
+				grid-template-columns: 80%;
+			}
 		}
 		&__frame-content{
 			@include gridBox(repeat(4, minmax(150px, 300px)));

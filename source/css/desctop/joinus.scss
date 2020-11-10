@@ -6,6 +6,9 @@
 		@include flexBox();
 		&__container{
 			grid-gap: 0;
+			@include screen_576{
+				grid-template-columns: 80%;
+			}
 		}
 		&__form-row{
 			@include flexBox();
@@ -15,7 +18,7 @@
 			}
 		}
 		&__input-block{
-			@include gridBox(minmax(250px, 512px));
+			@include gridBox(minmax(250px, 509px));
 			border: 2px solid $colorJoinUsInputBorder;
 			border-radius: 6px;
 			margin: 45px 1.2rem;

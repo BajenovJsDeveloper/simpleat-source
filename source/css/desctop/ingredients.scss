@@ -9,10 +9,13 @@
 			grid-template-rows: repeat(2, min-content); 
 			justify-content: center;
 			grid-gap: 40px;
+			@include screen_576{
+				grid-template-columns: 80%;
+			}
 		}
 		&__card-container{
 			@include gridBox(repeat(5, minmax(120px, 197px)), auto, center, start);
-			grid-gap: 40px;
+			grid-gap: 30px;
 			@media screen and(max-width: 768px){
 				grid-template-columns: repeat(2, minmax(120px, 197px));
 				grid-auto-rows: min-content;
