@@ -31,3 +31,9 @@
 		@content;
 	}
 }
+
+@mixin screen_1200 {
+	@media screen and (max-width: 1200px){
+		@content;
+	}
+}

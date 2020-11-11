@@ -30,7 +30,7 @@ $(document).ready(function () {
       width: `100vh + ${getScrollWidth()}`,
     });
   };
-
+  
   function getScrollWidth() {
     let div = document.createElement("div");
     div.style.overflowY = "scroll";
@@ -64,7 +64,6 @@ $(document).ready(function () {
 
   function setKeyPressOnESC(closeHdl) {
     $(document).keydown(event, function () {
-      console.log("key: ", event.which);
       if (event.which === ESC_CODE) {
         closeHdl();
       }
@@ -80,37 +79,29 @@ $(document).ready(function () {
   }
 
   function setClickOnCheckbox(checkID1, checkID2) {
-    $(`#${checkID2}`).addClass('colored');
+    $(`#${checkID2}`).addClass("colored");
     $(`#${checkID1}`).click(function () {
-      $(this)
-        .find(".select-form__check-area")
-        .addClass("checked");
+      $(this).find(".select-form__check-area").addClass("checked");
 
-      $(`#${checkID2}`)
-        .find(".select-form__check-area")
-        .removeClass("checked");
+      $(`#${checkID2}`).find(".select-form__check-area").removeClass("checked");
 
       $("[name=purchase]").attr("checked", true);
       $("[name=subscribe]").removeAttr("checked");
       $(".food__button").html("Add to cart");
-      $(this).addClass('colored');
-      $(`#${checkID2}`).removeClass('colored');
+      $(this).addClass("colored");
+      $(`#${checkID2}`).removeClass("colored");
       subscribeState = false;
     });
     $(`#${checkID2}`).click(function () {
-      $(this)
-        .find(".select-form__check-area")
-        .addClass("checked");
+      $(this).find(".select-form__check-area").addClass("checked");
 
-      $(`#${checkID1}`)
-        .find(".select-form__check-area")
-        .removeClass("checked");
+      $(`#${checkID1}`).find(".select-form__check-area").removeClass("checked");
 
       $("[name=subscribe]").attr("checked", true);
       $("[name=purchase]").removeAttr("checked");
       $(".food__button").html("Subscribe");
-      $(this).addClass('colored');
-      $(`#${checkID1}`).removeClass('colored');
+      $(this).addClass("colored");
+      $(`#${checkID1}`).removeClass("colored");
       subscribeState = true;
     });
   }
@@ -146,61 +137,55 @@ $(document).ready(function () {
       });
     }, ANIMATION_TIME);
   }
-  
-  function setClickOnPlayVideoCards(buttonsID){
+
+  function setClickOnPlayVideoCards(buttonsID) {
     let prevPlayedItems = [];
     const VIDEO_ITEM = 0;
     const IMAGE_ITEM = 1;
     const RESET_HANDLE = 2;
     const INITIAL_TIME = 0;
 
-    function playPause(index){
+    function playPause(index) {
       let togglePlay = false;
 
-      function stopPrevPlayer(curItem, curImageItem, reset){
-        console.log('prev: ',prevPlayedItems);
-        if(prevPlayedItems[VIDEO_ITEM]){
+      function stopPrevPlayer(curItem, curImageItem, reset) {
+        if (prevPlayedItems[VIDEO_ITEM]) {
           prevPlayedItems[VIDEO_ITEM].pause();
           prevPlayedItems[VIDEO_ITEM].currentTime = 0;
           prevPlayedItems[RESET_HANDLE]();
-          $(prevPlayedItems[IMAGE_ITEM]).css({opacity: 0});
+          $(prevPlayedItems[IMAGE_ITEM]).css({ opacity: 0 });
         }
         prevPlayedItems = [curItem, curImageItem, reset];
       }
-      
-      function togglePlayVideo(){
-        let resetTogglePlay = () =>{
-          togglePlay = false
-        }
-        let curItem =  $('.frame-card__video')[index];
-        let curImageItem = $('.frame-card__video-block')[index];
-        if(!togglePlay) {
+
+      function togglePlayVideo() {
+        let resetTogglePlay = () => {
+          togglePlay = false;
+        };
+        let curItem = $(".frame-card__video")[index];
+        let curImageItem = $(".frame-card__video-block")[index];
+        if (!togglePlay) {
           stopPrevPlayer(curItem, curImageItem, resetTogglePlay);
           curItem.play();
           togglePlay = true;
-          console.log(curImageItem)
-          $(curImageItem).css({opacity: 1});
-        }
-        else {
+          $(curImageItem).css({ opacity: 1 });
+        } else {
           curItem.pause();
           curItem.currentTime = INITIAL_TIME;
           togglePlay = false;
-          $(curImageItem).css({opacity: 0});
-        }  
+          $(curImageItem).css({ opacity: 0 });
+        }
       }
-      
+
       return togglePlayVideo;
     }
-    $(`.${buttonsID}`)
-    .each(function(index, item){
-      let button = $(item).find('.frame-card__play-button');
-      $(button)
-      .on('click', playPause(index));
-    })
-    
+    $(`.${buttonsID}`).each(function (index, item) {
+      let button = $(item).find(".frame-card__play-button");
+      $(button).on("click", playPause(index));
+    });
   }
 
-  setClickOnPlayVideoCards('frame-card');//__play-button
+  setClickOnPlayVideoCards("frame-card"); 
 
   setupCookie("popup-cookie", "close-cookie");
 
@@ -217,7 +202,7 @@ $(document).ready(function () {
   setClickOnTabs("super-food__tab");
 
   const subscribeOnLangChange = (lang) => {
-    console.log(lang);
+    console.log('Changing language on: ',lang);
   };
 
   const table = new Table("table", ["", "Amount", "%RI"]);

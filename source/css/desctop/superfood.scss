@@ -72,6 +72,7 @@
 		}
 		&__side-block{
 			position: relative;
+			padding: 40px 0;
 			@include flexBox();
 				width: 100%;
 			}
@@ -79,6 +80,7 @@
 			width: 100%;
 			padding-right: 50px;
 			padding: 38px 50px 35px 0;
+			align-self: flex-start;
 		}
 		&__front-block{
 			@include flexBox();
@@ -96,24 +98,22 @@
 			background-color: $colorWhite;
 			grid-gap: 30px;
 			border-radius: 10px;
+			@include screen_576{
+				.super-food__side-table{
+					padding: 20px 0;
+					font-size: 0.68rem;
+				}
+			}
 			@include screen_768{
 				grid-template-columns: minmax(min-content, 1fr);
 				grid-template-rows: auto;
 				justify-content: center;
 				grid-gap: 35px;
 				padding: 20px;
+				font-size: 0.8125rem;
 				.super-food__side-table{
 					padding: 20px 0;
 				}
-			}
-			@include screen_576{
-				font-size: 0.68rem;
-				.super-food__side-table{
-					padding: 20px 0;
-				}
-			}
-			@include screen_992{
-				width: 80%;
 			}
 		}
 		&__tabs{

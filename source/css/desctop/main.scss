@@ -16,6 +16,9 @@
 			min-width: 300px;
 			grid-gap: 85px;
 			justify-content: center;
+			@include screen_1200{
+				width: 80%;
+			}
 		}
 
 	}

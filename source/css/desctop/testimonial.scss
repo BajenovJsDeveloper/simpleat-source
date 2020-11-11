@@ -65,8 +65,8 @@
 		}
 		&__play-img{
 			position: absolute;
-			top: 1rem;
-			right: 1rem;
+			top: 15px;
+			right: 15px;
 			width: 32px;
 			transition: 0.3s;
 			z-index: 80;
@@ -101,7 +101,7 @@
 		}
 		&__frame-content{
 			@include gridBox(repeat(4, minmax(150px, 300px)), 1fr);
-			grid-gap: 25px;
+			grid-gap: 30px;
 			@include screen_768 {
 				grid-template-columns: repeat(2, 1fr);
 				grid-template-rows: repeat(2, 1fr);

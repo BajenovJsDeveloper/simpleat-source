@@ -89,6 +89,7 @@
 		height: 100%;
 		&_m50{
 			@include footerBlock(50px, $colorBlockBG1);
+			padding-top: 20px;
 		}
 		&_m20{
 			@include footerBlock(20px, $colorBlockBG2);
@@ -137,6 +138,7 @@
 	}
 	&__language{
 		margin-left: auto;
+		margin-right: 10px;
 	}
 	&__logo{
 		padding-top: 28px;

@@ -15,11 +15,11 @@
 		}
 		&__card-container{
 			@include gridBox(repeat(5, minmax(120px, 197px)), auto, center, start);
-			grid-gap: 30px;
+			grid-gap: 42px;
 			@media screen and(max-width: 768px){
 				grid-template-columns: repeat(2, minmax(120px, 197px));
 				grid-auto-rows: min-content;
-				grid-gap: 20px;
+				grid-gap: 30px;
 				.card:last-child{
 					grid-column: 1/3;
 					justify-self: center;

@@ -3,7 +3,7 @@
 
 .main{
 	.joinus{
-		@include flexBox();
+		padding-bottom: 45px;
 		&__container{
 			grid-gap: 0;
 			@include screen_576{

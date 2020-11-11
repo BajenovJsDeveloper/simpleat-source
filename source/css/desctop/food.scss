@@ -5,7 +5,7 @@
 	.food{
 		&__container{
 			@include gridBox(1fr minmax(250px, 555px));
-			grid-gap: 28px;
+			grid-gap: 55px;
 			@include screen_768{
 				grid-template-columns: 80%;
 				grid-gap: 20px;	
@@ -19,8 +19,9 @@
 			@include flexBox(stretch, center, column);
 		}
 		&__img{
-			max-width: 485px;
+			max-width: 528px;
 			min-width: 180px;
+			margin-left: -15px;
 		}
 		&__header{
 
@@ -31,7 +32,7 @@
 		&__subscribe{
 			@include gridBox(1fr 1fr, auto, start, end);
 			text-align: left;
-			margin-top: 1rem;
+			margin-top: 2.5rem;
 			width: 100%;
 			grid-gap: 35px;
 			@include screen_576 {
@@ -137,7 +138,7 @@
 			}
 		}
 		&__check-block{
-			margin-top: 15px;
+			margin-top: 20px;
 			@include gridBox(repeat(2, 1fr), 1fr, start);
 			width: 100%;
 			grid-gap: 35px;
@@ -158,8 +159,8 @@
 		}
 		&__check-area{
 			@include flexBox(center,center);
-			width: 43px;
-			height: 43px;
+			width: 40px;
+			height: 40px;
 			border-radius: 6px;
 			border:2px solid $colorSelectFormborder;
 			transition: 0.3s;
